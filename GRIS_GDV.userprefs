@@ -1,0 +1,24 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MaxP\Shaders\Scripts\Editor\DirtyLensFlareEditor.cs">
+    <Files>
+      <File FileName="Assets\Scripts\CameraOrbit.cs" Line="1" Column="1" />
+      <File FileName="Assets\CarLight.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CameraNavigator.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CameraSwitch.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ColorChange.cs" Line="1" Column="1" />
+      <File FileName="Assets\MaxP\Shaders\Scripts\Editor\DirtyLensFlareEditor.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="G:\Study\GRIS_GDV\GRIS_GDV\Assets\Scripts\ColoTest.cs" line="17" column="24" />
+      <Breakpoint file="G:\Study\GRIS_GDV\GRIS_GDV\Assets\Scripts\ColoTest.cs" line="22" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <StartupItems>
+    <String>Assembly-CSharp.csproj</String>
+    <String>Assembly-CSharp-Editor.csproj</String>
+  </StartupItems>
+</Properties>
