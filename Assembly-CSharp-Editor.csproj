@@ -801,6 +801,17 @@
           <Target Name="GenerateTargetFrameworkMonikerAttribute" />
           <Target Name="GenerateTargetFrameworkMonikerAttribute" />
           <Target Name="GenerateTargetFrameworkMonikerAttribute" />
+          <Target Name="GenerateTargetFrameworkMonikerAttribute" />
+          <Target Name="GenerateTargetFrameworkMonikerAttribute" />
+          <Target Name="GenerateTargetFrameworkMonikerAttribute" />
+          <Target Name="GenerateTargetFrameworkMonikerAttribute" />
+          <Target Name="GenerateTargetFrameworkMonikerAttribute" />
+          <Target Name="GenerateTargetFrameworkMonikerAttribute" />
+          <Target Name="GenerateTargetFrameworkMonikerAttribute" />
+          <Target Name="GenerateTargetFrameworkMonikerAttribute" />
+          <Target Name="GenerateTargetFrameworkMonikerAttribute" />
+          <Target Name="GenerateTargetFrameworkMonikerAttribute" />
+          <Target Name="GenerateTargetFrameworkMonikerAttribute" />
         </Policies>
       </Properties>
     </MonoDevelop>

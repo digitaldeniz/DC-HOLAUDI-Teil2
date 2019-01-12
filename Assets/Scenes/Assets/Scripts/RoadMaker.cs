@@ -20,12 +20,18 @@ public class RoadMaker : MonoBehaviour {
     public float wavyness = 5f;
     public float waveScale = .1f;
 
+    public int[] random_space = new int[] { 300, 600, 900, 1200};
+
     public Vector2 waveOffset;
     public Vector2 waveStep = new Vector2(0.01f, 0.01f);
 
     private bool stripeCheck = true;
 
     List<Vector3> roadsegment = new List<Vector3>();
+
+    public GameObject[] objectToPlace = new GameObject[4]; // GameObject to place
+
+    public Transform target;
 
     void Start () {
         MeshFilter meshFilter = this.GetComponent<MeshFilter>();
@@ -77,7 +83,35 @@ public class RoadMaker : MonoBehaviour {
 
         meshFilter.mesh = mb.CreateMesh();
         meshCollider.sharedMesh = meshFilter.mesh;
-	}
+
+        int einszahl = Random.Range(0, 3);
+        int erscheinsegmentArray = Random.Range(0,3);
+        int erscheinsegmentRoad = random_space[erscheinsegmentArray];
+        Vector3 relativePos = roadsegment[erscheinsegmentRoad+1] - roadsegment[erscheinsegmentRoad];
+
+        GameObject newObject = (GameObject)Instantiate(objectToPlace[einszahl], roadsegment[erscheinsegmentRoad], Quaternion.LookRotation(relativePos, new Vector3(0,1,0)));
+        newObject.transform.Rotate(new Vector3(0, 1, 0), 90.0f);
+
+        einszahl = Random.Range(0, 3);
+        erscheinsegmentArray = Random.Range(0,3);
+        erscheinsegmentRoad = random_space[erscheinsegmentArray]-100;
+        relativePos = roadsegment[erscheinsegmentRoad+1] - roadsegment[erscheinsegmentRoad];
+        GameObject newObject1 = (GameObject)Instantiate(objectToPlace[einszahl], roadsegment[erscheinsegmentRoad], Quaternion.LookRotation(relativePos, new Vector3(0, 1, 0)));
+        newObject1.transform.Rotate(new Vector3(0, 1, 0),  90.0f);
+
+        einszahl = Random.Range(0, 3);
+        erscheinsegmentArray = Random.Range(0,3);
+        erscheinsegmentRoad = random_space[erscheinsegmentArray]+200;
+        relativePos = roadsegment[erscheinsegmentRoad + 1] - roadsegment[erscheinsegmentRoad];
+        GameObject newObject2 = (GameObject)Instantiate(objectToPlace[einszahl], roadsegment[erscheinsegmentRoad], Quaternion.LookRotation(relativePos, new Vector3(0, 1, 0)));
+        newObject2.transform.Rotate(new Vector3(0, 1, 0), 90.0f);
+
+    }
+     
+    private Vector3 Direct (Vector3 p1, Vector3 p2)
+    {
+        return p2 - p1;
+    }
 
     private void ExtrudeRoad (MeshBuilder mb, Vector3 pPrev, Vector3 p0, Vector3 p1)
     {
@@ -118,6 +152,8 @@ public class RoadMaker : MonoBehaviour {
         target = -Vector3.up * edgeHeight;
 
         MakeRoadQuad(mb, pPrev, p0, p1, offset, target, stripeSubmesh);
+
+       
 
     }
 
@@ -160,6 +196,18 @@ public class RoadMaker : MonoBehaviour {
 
         mb.BuildTriangle(bl, br, tl, submesh);
         mb.BuildTriangle(br, tr, tl, submesh);
+
+
+        
+            // generate random x position
+            //int posx = (int)Random.Range(offset.x, targetOffset.x);
+            // generate random z position
+            //int posz = (int)Random.Range(offset.x, targetOffset.x);
+            // get the terrain height at the random position
+            //float posy = Terrain.activeTerrain.SampleHeight(new Vector3(posx, 0, posz));
+            // create new gameObject on random position
+            
+            
     }
 
 }
